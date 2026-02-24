@@ -1,0 +1,1009 @@
+   FERWA PREMIUM BILLING & INVOICE SUITE (RECOVERED)
+   ========================================================================== */
+
+/* Layout & Container */
+.sales-container {
+    padding: 2rem;
+    background: var(--bg-body);
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.page-subtitle,
+.sales-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.25rem;
+}
+
+.sales-title,
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Premium Toggles */
+.billing-type-toggle {
+    display: flex;
+    background: var(--bg-surface);
+    padding: 6px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    gap: 4px;
+}
+
+.dark .billing-type-toggle {
+    background: #18181b;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.type-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.type-btn:hover:not(.active) {
+    background: var(--bg-subtle);
+    color: var(--text-main);
+}
+
+.type-btn.active {
+    background: #6366f1;
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    transform: translateY(-1px);
+}
+
+.type-count {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    background: var(--bg-subtle);
+    color: var(--text-muted);
+}
+
+.type-btn.active .type-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+/* Stats Dashboard */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.stat-glow {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.stat-glow.purple {
+    background: #6366f1;
+}
+
+.stat-glow.orange {
+    background: #f97316;
+}
+
+.stat-glow.green {
+    background: #22c55e;
+}
+
+.stat-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stat-icon.purple {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.stat-icon.orange {
+    background: rgba(249, 115, 22, 0.1);
+    color: #f97316;
+}
+
+.stat-icon.green {
+    background: rgba(34, 197, 94, 0.1);
+    color: #22c55e;
+}
+
+.stat-content {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0.25rem;
+}
+
+.glass-card,
+.sales-card.glass {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.sales-card {
+    padding: 1.5rem;
+}
+
+.sales-tabs,
+.standard-tabs-wrapper {
+    display: flex;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    height: 52px;
+    gap: 4px;
+    margin-bottom: 2rem;
+}
+
+.tab-item,
+.standard-tabs-btn {
+    flex: 1;
+    background: transparent !important;
+    border: none !important;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab-item.active,
+.standard-tabs-btn.active {
+    color: #ffffff !important;
+}
+
+.standard-tabs-indicator,
+.tab-indicator {
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    background: #6366f1;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    z-index: 1;
+}
+
+.tab-count {
+    font-size: 0.8rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.15);
+    color: inherit;
+    min-width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Search Bar */
+.standard-search-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1.5px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+
+.dark .standard-search-wrapper {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.standard-search-wrapper:focus-within {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+    background: var(--bg-surface);
+}
+
+.standard-search-wrapper input {
+    background: transparent;
+    border: none;
+    width: 100%;
+    color: var(--text-main);
+    outline: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.standard-search-icon {
+    color: #6366f1;
+}
+
+/* Table Styles */
+.billing-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.billing-table th {
+    text-align: left;
+    padding: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.billing-table td {
+    padding: 1.25rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    vertical-align: middle;
+}
+
+.billing-table tr:hover {
+    background: rgba(99, 102, 241, 0.02);
+}
+
+/* Status Badges */
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.pill-safe {
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.pill-warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: #f59e0b;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.pill-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.aging-text {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 2px;
+    display: block;
+}
+
+/* ==========================================================================
+   GST INVOICE GRID (PRECISE ALIGNMENT)
+   ========================================================================== */
+
+.gst-invoice-container {
+    width: 780px;
+    /* Safe pixel width (~206mm) to prevent horizontal cutoff */
+    margin: 0 auto;
+    /* Center within wrapper */
+    min-height: 1100px;
+    /* Approx 297mm */
+    background: #fff;
+    color: #000;
+    padding: 4mm;
+    /* Compact padding for edge-to-edge look */
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.25;
+}
+
+.gst-main-header {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding: 4px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-bottom: none;
+    letter-spacing: 2px;
+}
+
+.gst-grid {
+    border: 2px solid #000;
+}
+
+.gst-row {
+    display: flex;
+    border-bottom: 1.5px solid #000;
+}
+
+.gst-col {
+    padding: 2px 12px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1.5px solid #000;
+    box-sizing: border-box;
+}
+
+.gst-col:last-child {
+    border-right: none;
+}
+
+.gst-col-60 {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-40 {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+    border-right: none;
+}
+
+.gst-col-50 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.gst-col-35 {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-33 {
+    flex: 0 0 33.333% !important;
+    max-width: 33.333% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-66 {
+    flex: 0 0 66.666% !important;
+    max-width: 66.666% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-67 {
+    flex: 0 0 66.667% !important;
+    max-width: 66.667% !important;
+    border-right: none;
+}
+
+.gst-col-34 {
+    flex: 0 0 33.334% !important;
+    max-width: 33.334% !important;
+    border-right: none;
+}
+
+.gst-company-name {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    line-height: 1.1;
+    color: #000;
+}
+
+.gst-address-row {
+    display: flex;
+    font-size: 0.82rem;
+    margin-bottom: 1px;
+}
+
+.gst-address-label {
+    min-width: 95px;
+    font-weight: 800;
+}
+
+.gst-address-value {
+    flex: 1;
+    font-weight: 500;
+}
+
+.gst-invoice-detail-label {
+    min-width: 90px;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.gst-invoice-detail-value {
+    font-weight: 700;
+}
+
+.gst-sub-header {
+    font-size: 0.75rem;
+    text-align: center;
+    border-bottom: 1.5px solid #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    padding: 3px;
+    background: #e2e8f0;
+    /* Darker grey for contrast */
+}
+
+/* High Density Table for Exact Reference Match */
+.gst-high-density-table {
+    width: 100%;
+    font-size: 0.82rem;
+    border-collapse: collapse;
+    line-height: 1.3;
+    /* Increased for multi-line readability */
+}
+
+.gst-high-density-table td {
+    vertical-align: top;
+    padding: 1px 0;
+    border-bottom: none;
+}
+
+.gst-high-density-table .label-col {
+    font-weight: 800;
+    padding-right: 0;
+    white-space: nowrap;
+    width: 85px;
+    /* Standardized label width */
+}
+
+.gst-high-density-table .colon-col {
+    font-weight: 800;
+    width: 15px;
+    /* Standardized colon column */
+    text-align: center;
+}
+
+.gst-high-density-table .value-col {
+    font-weight: 500;
+    padding-left: 2px;
+}
+
+.gst-items-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.gst-items-table th {
+    border-right: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+    padding: 2px 4px;
+    /* Reduced for A4 fitting */
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-align: center;
+    background: #f1f5f9;
+    /* Balanced Slate 100 */
+    color: #1e293b;
+}
+
+.gst-items-table th:last-child {
+    border-right: none;
+}
+
+.gst-items-table td {
+    border-right: 1.5px solid #000;
+    border-bottom: none;
+    padding: 0 8px;
+    /* Remove vertical padding to let line-height/height control */
+    font-size: 0.75rem;
+    font-weight: 500;
+    height: 24px;
+    /* Fixed height to fill A4 with 12 rows */
+    vertical-align: middle;
+    text-align: center;
+}
+
+.gst-items-table td:last-child {
+    border-right: none;
+}
+
+.gst-total-row td {
+    border-top: 2px solid #000;
+    padding: 8px;
+    font-weight: 900;
+}
+
+.gst-summary-total-v2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border: 2px solid #000;
+}
+
+/* HSN Summary Section */
+.gst-hsn-summary-wrapper {
+    border-top: 2px solid #000;
+}
+
+.gst-hsn-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.gst-hsn-table th,
+.gst-hsn-table td {
+    border-right: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+    padding: 3px 6px;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.gst-hsn-table th:last-child,
+.gst-hsn-table td:last-child {
+    border-right: none;
+}
+
+.gst-hsn-table th {
+    background: #f1f5f9;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #1e293b;
+}
+
+.gst-hsn-table td {
+    font-weight: 600;
+}
+
+.gst-hsn-table tfoot tr {
+    background: #f1f5f9;
+    font-weight: 900;
+}
+
+/* Footer & Bank Info */
+.gst-bank-info-box {
+    border: 1.5px solid #000;
+    height: 100%;
+}
+
+.gst-bank-header {
+    background: #e2e8f0;
+    font-weight: 900;
+    border-bottom: 1.5px solid #000;
+    padding: 3px 12px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.gst-bank-info {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    line-height: 1.4;
+}
+
+.gst-bank-label {
+    min-width: 110px;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.gst-signature-area {
+    margin-top: auto;
+    text-align: center;
+    padding: 8px;
+}
+
+.gst-label-row {
+    font-size: 0.85rem;
+    font-weight: 900;
+    margin-bottom: 2px;
+}
+
+.gst-words-val {
+    font-size: 0.82rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.gst-summary-side {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gst-summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 12px;
+    border-bottom: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.gst-summary-row:last-child {
+    border-bottom: none;
+}
+
+.gst-tax-words-section {
+    border-top: 1.5px solid #000;
+}
+
+/* Global Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+/* Modal UI Fixes */
+.view-invoice-complex {
+    position: relative;
+    max-width: 1200px !important;
+    width: 95% !important;
+    height: 90vh !important;
+    margin: auto;
+    padding: 0 !important;
+    overflow: hidden;
+    background: var(--bg-surface) !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.view-modal-toolbar {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.view-sidebar {
+    width: 300px;
+    background: var(--bg-subtle);
+    border-right: 1px solid var(--border-color);
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.template-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.template-card {
+    padding: 1rem 0.5rem;
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.template-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-color);
+}
+
+.template-card.active {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.template-icon {
+    font-size: 1.25rem;
+}
+
+.template-name {
+    font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.aesthetics-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.aesthetic-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.group-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.select-pill-group {
+    display: flex;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 3px;
+    border-radius: 10px;
+    gap: 2px;
+}
+
+.dark .select-pill-group {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.pill-btn {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.pill-btn.active {
+    background: white;
+    color: var(--text-main);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dark .pill-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.premium-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.premium-toggle:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.dark .premium-toggle:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.premium-toggle input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #6366f1;
+    cursor: pointer;
+}
+
+.color-picker-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.color-dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px var(--border-color);
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.color-dot.active {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* Preview Area */
+.view-modal-main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.document-preview-area {
+    flex: 1;
+    background: #f1f5f9;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dark .document-preview-area {
+    background: #0f172a;
+}
+
+.multi-copy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 850px;
+}
+
+.invoice-document {
+    background: white;
+    width: 100%;
+    min-height: 1050px;
+    padding: 1.5rem;
+    /* Reduced padding for better centering fit */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    color: #1e293b;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+}
+
+/* Sidebar Extras */
+.toggle-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sidebar-footer-info {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.upgrade-link-btn {
+    margin-top: 0.5rem;
+    color: #6366f1;
+    font-weight: 700;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+}
+
+.watermark-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.03);
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+/* Print Mode Optimization */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #printable-invoice,
+    #printable-invoice * {
+        visibility: visible;
+    }
+
+    #printable-invoice {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 210mm;
+    }
+
+    .gst-invoice-container {
+        box-shadow: none !important;
+        border: 1.5px solid #000 !important;
+    }
+}

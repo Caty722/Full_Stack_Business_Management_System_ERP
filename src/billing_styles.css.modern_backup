@@ -1,0 +1,500 @@
+    margin: 0 auto;
+    /* Center within wrapper */
+    min-height: 1100px;
+    /* Approx 297mm */
+    background: #fff !important;
+    color: #000 !important;
+    padding: 4mm;
+    /* Compact padding for edge-to-edge look */
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.25;
+}
+
+/* Ensure children always use dark text on white background */
+.gst-invoice-container *:not(.status-pill) {
+    color: #000 !important;
+}
+
+.label-col,
+.colon-col {
+    color: #475569 !important;
+    /* Slightly muted but clearly dark */
+    font-weight: 800 !important;
+}
+
+.value-col,
+.gst-invoice-detail-value {
+    color: #000 !important;
+}
+
+.gst-main-header {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    padding: 4px;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-bottom: none;
+    letter-spacing: 2px;
+}
+
+.gst-grid {
+    border: 2px solid #000;
+}
+
+.gst-row {
+    display: flex;
+    border-bottom: 1.5px solid #000;
+}
+
+.gst-col {
+    padding: 2px 12px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1.5px solid #000;
+    box-sizing: border-box;
+}
+
+.gst-col:last-child {
+    border-right: none;
+}
+
+.gst-col-60 {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-40 {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+    border-right: none;
+}
+
+.gst-col-50 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+}
+
+.gst-col-35 {
+    flex: 0 0 35% !important;
+    max-width: 35% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-33 {
+    flex: 0 0 33.333% !important;
+    max-width: 33.333% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-66 {
+    flex: 0 0 66.666% !important;
+    max-width: 66.666% !important;
+    border-right: 1.5px solid #000;
+}
+
+.gst-col-67 {
+    flex: 0 0 66.667% !important;
+    max-width: 66.667% !important;
+    border-right: none;
+}
+
+.gst-col-34 {
+    flex: 0 0 33.334% !important;
+    max-width: 33.334% !important;
+    border-right: none;
+}
+
+.gst-company-name {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+    line-height: 1.1;
+    color: #000;
+}
+
+.gst-address-row {
+    display: flex;
+    font-size: 0.82rem;
+    margin-bottom: 1px;
+}
+
+.gst-address-label {
+    min-width: 95px;
+    font-weight: 800;
+}
+
+.gst-address-value {
+    flex: 1;
+    font-weight: 500;
+}
+
+.gst-invoice-detail-label {
+    min-width: 90px;
+    font-weight: 800;
+    display: inline-block;
+}
+
+.gst-invoice-detail-value {
+    font-weight: 700;
+}
+
+.gst-sub-header {
+    font-size: 0.75rem;
+    text-align: center;
+    border-bottom: 1.5px solid #000;
+    font-weight: 800;
+    text-transform: uppercase;
+/* ==========================================================================
+   MODERN NON-GST INVOICE DESIGN
+   ========================================================================== */
+
+.modern-invoice-container {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: #fff !important;
+    color: #000 !important;
+    padding: 15mm;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    position: relative;
+}
+
+.modern-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8mm;
+}
+
+.modern-invoice-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.modern-recipient-type {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #444 !important;
+}
+
+.modern-shop-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10mm;
+}
+
+.modern-shop-info {
+    max-width: 60%;
+}
+
+.modern-shop-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 2mm;
+    color: #000 !important;
+}
+
+.modern-shop-details {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #333 !important;
+}
+
+.modern-logo-container img {
+    max-width: 120px;
+    height: auto;
+}
+
+.modern-info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5mm;
+    margin-bottom: 8mm;
+}
+
+.modern-info-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.modern-info-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555 !important;
+    margin-bottom: 1mm;
+}
+
+.modern-info-value {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #000 !important;
+}
+
+.modern-address-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8mm;
+    margin-bottom: 12mm;
+}
+
+.modern-address-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #555 !important;
+    margin-bottom: 2mm;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1mm;
+}
+
+.modern-address-value {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-weight: 600;
+    color: #000 !important;
+}
+
+.modern-items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8mm;
+}
+
+.modern-items-table th {
+    text-align: left;
+    padding: 3mm 2mm;
+    font-size: 0.85rem;
+    font-weight: 800;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    text-transform: capitalize;
+}
+
+.modern-items-table td {
+    padding: 4mm 2mm;
+    font-size: 0.9rem;
+    vertical-align: top;
+    border-bottom: 1px solid #eee;
+}
+
+.modern-item-name {
+    font-weight: 800;
+    margin-bottom: 1mm;
+    display: block;
+}
+
+.modern-item-desc {
+    font-size: 0.8rem;
+    color: #555 !important;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.modern-summary-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 4mm;
+}
+
+.modern-totals-box {
+    width: 100%;
+    border-top: 2px solid #000;
+    padding-top: 4mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modern-qty-words {
+    font-size: 0.8rem;
+    color: #555 !important;
+    font-weight: 600;
+}
+
+.modern-grand-total {
+    text-align: right;
+}
+
+.modern-total-label {
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-right: 4mm;
+}
+
+.modern-total-value {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.modern-payment-status {
+    margin-top: 6mm;
+    padding: 3mm;
+    background: #f8fff9;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3mm;
+}
+
+.modern-paid-badge {
+    color: #10b981 !important;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 1mm;
+}
+
+.modern-payment-details {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Print optimizations */
+@media print {
+    .modern-invoice-container {
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+
+/* --- Modern Layout Refinements --- */
+.modern-info-grid, 
+.modern-address-grid {
+    grid-template-columns: repeat(3, 1fr);
+    border-bottom: 2px solid #000;
+    padding-bottom: 4mm;
+}
+
+.modern-address-label {
+    border-bottom: 1.5px solid #000 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    margin-bottom: 3mm;
+}
+
+.modern-info-col {
+    border-left: 1px solid #eee;
+    padding-left: 4mm;
+}
+
+.modern-info-col:first-child {
+    border-left: none;
+    padding-left: 0;
+}
+
+.modern-items-table th:last-child, 
+.modern-items-table td:last-child {
+    text-align: right;
+    padding-right: 2mm;
+}
+
+.modern-shop-details {
+    line-height: 1.4;
+    margin-top: 1mm;
+}
+
+/* Final alignment tweaks for modern invoice */
+.modern-total-label {
+    color: #64748b !important;
+    font-size: 0.9rem;
+}
+
+.modern-total-value {
+    color: #000 !important;
+    font-size: 1.6rem;
+    margin-left: 4mm;
+}
+
+.modern-items-table th {
+    background: #f8fafc;
+    border-top: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+}
+
+.modern-item-name {
+    color: #000 !important;
+    font-size: 0.95rem;
+}
+
+.modern-info-value {
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+/* ==========================================================================
+   EMERGENCY RECONSTRUCTION: MODAL & DARK MODE FIXES
+   ========================================================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: var(--bg-surface);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+}
+
+/* Force dark text on white invoice background regardless of theme */
+.invoice-document,
+.gst-invoice-container,
+.modern-invoice-container {
+    background: #fff !important;
+    color: #000 !important;
+}
+
+.dark .invoice-document *,
+.dark .gst-invoice-container *,
+.dark .modern-invoice-container * {
+    color: #000 !important;
+}
+
+/* Fix for large Lucide icons in stats */
+.stat-icon svg {
+    width: 24px !important;
+    height: 24px !important;
+}
+
+.action-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.dark .action-btn {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.action-btn:hover {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    transform: translateY(-1px);
+}

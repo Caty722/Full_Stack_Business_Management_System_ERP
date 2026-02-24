@@ -1,0 +1,60 @@
+/* Global Stats Icon Styling (Neon Effect) */
+.stats-icon-wrapper {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+/* Light Mode Variants */
+.stats-icon-wrapper.purple {
+    background: #eef2ff;
+    color: #6366f1;
+}
+
+.stats-icon-wrapper.orange {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+.stats-icon-wrapper.green {
+    background: #f0fdf4;
+    color: #22c55e;
+}
+
+.stats-icon-wrapper.blue {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+/* Dark Mode Variants (Neon Glow) */
+.dark .stats-icon-wrapper.purple {
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.2);
+}
+
+.dark .stats-icon-wrapper.orange {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    box-shadow: 0 0 12px rgba(249, 115, 22, 0.2);
+}
+
+.dark .stats-icon-wrapper.green {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    box-shadow: 0 0 12px rgba(34, 197, 94, 0.2);
+}
+
+.dark .stats-icon-wrapper.blue {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.2);
+}
+
+/* Products.jsx Toggle Logic Fix */
+// Old: left: `calc(4px + ((${filterMode === 'all' ? 0 : brandType === 'GST' ? 1 : 2}) * (100% - 8px) / 3))`
+// New: left: `calc(4px + ((${brandType === 'Non-GST' ? 2 : filterMode === 'low_stock' ? 1 : 0}) * (100% - 8px) / 3))`
